@@ -1,7 +1,17 @@
-package circle_ci_test
+package main
 
 import "fmt"
 
+type Person struct {
+    Name string
+    Age  int
+}
+
 func main() {
-    fmt.Print("Hello World !")
+    moi := Person{"Loïc", 21}
+    fmt.Println(SayHello(&moi))
+}
+
+func SayHello(p *Person) string {
+    return fmt.Sprintf("Hello %s", p.Name)
 }
